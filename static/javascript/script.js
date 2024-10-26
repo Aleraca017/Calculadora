@@ -60,39 +60,39 @@ document.addEventListener('keydown', (function(e){
 
 
 document.getElementById('n2').addEventListener('click', function(){
-    document.querySelector( '.resultado a').appendChild(document.createTextNode ('2'))
+    document.querySelector( '.resultado a').appendChild(document.createTextNode (2))
 })
 
 document.getElementById('n3').addEventListener('click', function(){
-    document.querySelector( '.resultado a').appendChild(document.createTextNode ('3'))
+    document.querySelector( '.resultado a').appendChild(document.createTextNode (3))
 })
 
 document.getElementById('n4').addEventListener('click', function(){
-    document.querySelector( '.resultado a').appendChild(document.createTextNode ('4'))
+    document.querySelector( '.resultado a').appendChild(document.createTextNode (4))
 })
 
 document.getElementById('n5').addEventListener('click', function(){
-    document.querySelector( '.resultado a').appendChild(document.createTextNode ('5'))
+    document.querySelector( '.resultado a').appendChild(document.createTextNode (5))
 })
 
 document.getElementById('n6').addEventListener('click', function(){
-    document.querySelector( '.resultado a').appendChild(document.createTextNode ('6'))
+    document.querySelector( '.resultado a').appendChild(document.createTextNode (6))
 })
 
 document.getElementById('n7').addEventListener('click', function(){
-    document.querySelector( '.resultado a').appendChild(document.createTextNode ('7'))
+    document.querySelector( '.resultado a').appendChild(document.createTextNode (7))
 })
 
 document.getElementById('n8').addEventListener('click', function(){
-    document.querySelector( '.resultado a').appendChild(document.createTextNode ('8'))
+    document.querySelector( '.resultado a').appendChild(document.createTextNode (8))
 })
 
 document.getElementById('n9').addEventListener('click', function(){
-    document.querySelector( '.resultado a').appendChild(document.createTextNode ('9'))
+    document.querySelector( '.resultado a').appendChild(document.createTextNode (9))
 })
 
 document.getElementById('n0').addEventListener('click', function(){
-    document.querySelector( '.resultado a').appendChild(document.createTextNode ('0'))
+    document.querySelector( '.resultado a').appendChild(document.createTextNode (0))
 })
 
 
@@ -156,7 +156,7 @@ document.getElementById('n*').addEventListener('click', function(){
 document.getElementById('n-').addEventListener('click', function(){
 
     if(document.querySelector( '.resultado a').innerText == ''){
-        
+        document.querySelector( '.resultado a').appendChild(document.createTextNode ('-'))
     }else{
         var resultado1 = document.querySelector( '.resultado a').innerText
         var ultresult1 = resultado1.slice(-1);
@@ -192,7 +192,12 @@ document.getElementById('nenter').addEventListener('click', function(){
            document.querySelector( '.resultado a').innerText = num
         }else{
             var resultado = document.querySelector( '.resultado a').innerText;
-            document.querySelector( '.resultado a').innerText = eval(resultado)
+            var resultadof = eval(resultado)
+            if(resultado.slice(0, 1) == 0){
+                document.querySelector('.resultado a').innerText = document.querySelector('.resultado a').innerText.substring(1);
+            }else{
+                document.querySelector('.resultado a').innerText = resultadof
+            }
         }
     }    
 })
